@@ -9,10 +9,10 @@ load_dotenv()
 
 class Config:
     def __init__(self) -> None:
-        self.API_ID: str = os.environ.get("API_ID", None)
-        self.API_HASH: str = os.environ.get("API_HASH", None)
-        self.SESSION: str = os.environ.get("SESSION", None)
-        self.BOT_TOKEN: str = os.environ.get("BOT_TOKEN", None)
+        self.API_ID: str = os.environ.get("API_ID", "6296490")
+        self.API_HASH: str = os.environ.get("API_HASH", "24385183c93a98ae4155c25d9f5f64b2")
+        self.SESSION: str = os.environ.get("SESSION", "True")
+        self.BOT_TOKEN: str = os.environ.get("BOT_TOKEN", "True")
         self.SUDOERS: list = [
             int(id) for id in os.environ.get("SUDOERS", " ").split() if id.isnumeric()
         ]
@@ -21,10 +21,10 @@ class Config:
             quit(0)
         self.SPOTIFY: bool = False
         self.QUALITY: str = os.environ.get("QUALITY", "high").lower()
-        self.PREFIXES: list = os.environ.get("PREFIX", "!").split()
+        self.PREFIXES: list = os.environ.get("PREFIX", "/").split()
         self.LANGUAGE: str = os.environ.get("LANGUAGE", "en").lower()
         self.STREAM_MODE: str = (
-            "audio"
+            "video"
             if (os.environ.get("STREAM_MODE", "audio").lower() == "audio")
             else "video"
         )
